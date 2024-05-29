@@ -1,0 +1,25 @@
+{
+  "builds": [
+    {
+      "src": "blog_api/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "https://storage.googleapis.com/drf-blog-api-bucket/static/$1"
+    },
+    {
+      "src": "/media/(.*)",
+      "dest": "https://storage.googleapis.com/drf-blog-api-bucket/media/$1"
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "blog_api/wsgi.py"
+    }
+  ]
+}

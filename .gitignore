@@ -1,0 +1,6 @@
+.venv
+.env
+db.sqlite3
+utils.txt
+media_files
+static_files
